@@ -19,6 +19,7 @@ class HomePageView(TemplateView):
 def homePageView2(request, id):
     dict = {
         "word": Word.objects.get(id=id),
+        "count": Word.objects.all().count()
         # "word_list": Word.objects.filter(Q(name=Word.objects.get(id=id).name))
     }
     return render(request, 'index.html', context=dict)
@@ -30,6 +31,7 @@ class HomePageView2(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['countWords'] = Word.objects.get(id=self.kwargs.id)
+        context['countWords1'] = Word.objects.all().count()
         context['title'] = 'Bosh sahifa'
 
         render(context, 'index.html')
@@ -56,6 +58,17 @@ class HomePageView0(TemplateView):
 
         return context
 
+
+class HomePageView02(TemplateView):
+    template_name = 'saytlar.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['countWords'] = Word.objects.all().count()
+        context['title'] = 'Bosh sahifa'
+
+        return context
+
 class HomePageView01(TemplateView):
     template_name = 'foydalanish.html'
 
@@ -65,6 +78,7 @@ class HomePageView01(TemplateView):
         context['title'] = 'Bosh sahifa'
 
         return context
+
 
 def contact_view(request):
     return render(request, 'contact.html')

@@ -10,3 +10,4 @@ class WordAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Word, WordAdmin)
+admin.site.register(Saytlar)

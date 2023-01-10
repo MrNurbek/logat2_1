@@ -24,3 +24,11 @@ class Word(models.Model):
     class Meta:
         verbose_name = "So'z"
         verbose_name_plural = "So'zlar"
+
+
+class Saytlar(models.Model):
+    name = models.CharField(max_length=50, db_index=True)
+    text = models.TextField(max_length=500, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

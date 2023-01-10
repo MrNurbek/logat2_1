@@ -117,7 +117,7 @@
                                 <div class="mdl-card__supporting-text"
                                      style="    color: rgba(0,0,0,.54);  font-size: 1rem;  line-height: 18px; overflow: hidden; padding: 16px 26px; width: 100%;  box-sizing: border-box;">
                                     <p style="font-size: 16px;  font-weight: 400;  line-height: 26px;  letter-spacing: 0;   margin-bottom: 16px">
-                                        Lugʻatimiz bazasida <strong><span class="mdl-color-text--pink">1&nbsp;390&nbsp;640</span></strong>
+                                        Lugʻatimiz bazasida <strong><span class="mdl-color-text--pink">{{ count }}</span></strong>
                                         soʻz jamlangan. Soʻzlar asosining izohi olingan asosiy manba: <i>E.
                                         Begmatov, A.
                                         Madvaliyev, N. Mahkamov, T. Mirzayev, N. Toʻxliyev, E. Umarov, D.
@@ -213,6 +213,8 @@
 
                         <li><a style="    color: inherit;   text-decoration: none;   white-space: nowrap;"
                                href="/yordam">Yordam</a></li>
+                        <li><a style="    color: inherit;   text-decoration: none;   white-space: nowrap;"
+                               href="{% url 'saytlar' %}">O'xashash saytlar</a></li>
                     </ul>
                 </div>
             </div>
