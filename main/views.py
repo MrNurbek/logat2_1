@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, View
 
-from .models import Word
+from .models import Word, Saytlar
 
 
 class HomePageView(TemplateView):
@@ -59,15 +59,15 @@ class HomePageView0(TemplateView):
         return context
 
 
-class HomePageView02(TemplateView):
-    template_name = 'saytlar.html'
+def HomePageView02(request):
+    dict = {
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['countWords'] = Word.objects.all().count()
-        context['title'] = 'Bosh sahifa'
+        "saytlar": Saytlar.objects.all()
 
-        return context
+    }
+    return render(request, 'saytlar.html', context=dict)
+
+
 
 class HomePageView01(TemplateView):
     template_name = 'foydalanish.html'
